@@ -1,0 +1,63 @@
+﻿@model VillaCreateDto
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-4">Create Villa</h2>
+    <form method="POST" asp-action="Create">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" type="text">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Sqft" class="form-label"></label>
+                    <input asp-for="Sqft" class="form-control" type="number">
+                    <span asp-validation-for="Sqft" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Occupancy" class="form-label"></label>
+                    <input asp-for="Occupancy" class="form-control" type="number">
+                    <span asp-validation-for="Occupancy" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Rate" class="form-label"></label>
+                    <input asp-for="Rate" class="form-control" type="number" step="0.01">
+                    <span asp-validation-for="Rate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="Amenity" class="form-label"></label>
+                    <input asp-for="Amenity" class="form-control" type="text">
+                    <span asp-validation-for="Amenity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label asp-for="Details" class="form-label"></label>
+                    <textarea asp-for="Details" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Details" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+            <div class="col-6 text-end">
+                <button type="submit" class="btn btn-primary">Create Villa</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

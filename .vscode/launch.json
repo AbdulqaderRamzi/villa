@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C#: Villa.Web [Default Configuration]",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}\\Villa.Web\\Villa.Web.csproj"
+    },
+    {
+      "name": "C#: Villa.Api [Default Configuration]",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}\\Villa.Api\\Villa.Api.csproj"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Villa.Web and Villa.API",
+      "configurations": [
+        "C#: Villa.Web [Default Configuration]",
+        "C#: Villa.Api [Default Configuration]"
+      ]
+    }
+  ]
+}

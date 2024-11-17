@@ -1,0 +1,52 @@
+﻿@model IEnumerable<VillaDto>
+<div class="container-fluid pt-4 border">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-primary">Villa List</h1>
+        </div>
+        <div class="col text-end">
+            <a class="btn btn-outline-primary" asp-controller="Villa" asp-action="Create">Create Villa</a>
+        </div>
+    </div>
+    <table class="table table-boarder">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Occupancy</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var villa in Model)
+            {
+                <tr>
+                    <td>@villa.Name</td>
+                    <td>@villa.Occupancy</td>
+                    <td>@villa.Rate.ToString("c")</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="action"
+                                data-toggle="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item">Action</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Occupancy</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+</VillaDto>
